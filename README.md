@@ -3,15 +3,16 @@
 ###README
 
 ####Labeling
-2値の行列に対して4近傍でラベリングを行い、総blob数,ラベリング結果を出力します。バグがあるかもしれないため、近いうちに修正予定です。
+4-neighbors labeling method.
+When you pass binary matrix to this, return sum of blobs and labeling result.
 
-####サンプル	
+####Sample	
 		$c, $r = gets.split(" ").map(&:to_i)
 
 		maze = $stdin.read.split(?\n).map(&:to_s)
 		maze = maze.map{|a| a.split(" ")}
 		l_num = 1
-		c_arr = [] #"1"のクラスタのインデックスを格納した配列
+		c_arr = [] #Array of "1" cluster indexes.
 
 		maze.each.with_index do |a, idx|
 			a.each.with_index do |s, i|
